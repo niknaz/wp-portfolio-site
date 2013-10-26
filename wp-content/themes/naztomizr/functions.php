@@ -34,19 +34,19 @@ function load_naztomizr_scripts() {
 add_action( 'wp_enqueue_scripts', 'load_naztomizr_scripts', 11);  
 
 /**
-  * Adding custom taxonomies
+  * Adding custom taxonomies for Portfolio Category
   */
 add_action( 'init', 'naztomizr_create_custom_tax' );
 
 function naztomizr_create_custom_tax() {
 	register_taxonomy('portfolio_category', 'naztomizr_portfolio', array( //reference theme name to avoid conflict
-		// Hierarchical taxonomy (like categories)
-		'hierarchical' => false,
+		// Hierarchical taxonomy - false for tag style, true for category style
+		'hierarchical' => true,
 		// This array of options controls the labels displayed in the WordPress Admin UI
 		'labels' => array(
 			'name' => _x( 'Portfolio Categories', 'taxonomy general name' ),
 			'singular_name' => _x( 'Portfolio Category', 'taxonomy singular name' ),
-			'search_items' =>  __( 'Search Portflio Categories' ),
+			'search_items' =>  __( 'Search Portfolio Categories' ),
 			'all_items' => __( 'All Portfolio Categories' ),
 			'parent_item' => null,
 			'parent_item_colon' => null,
@@ -56,6 +56,7 @@ function naztomizr_create_custom_tax() {
 			'new_item_name' => __( 'New Portfolio Category Name' ),
 			'menu_name' => __( 'Portfolio Categories' ),
 		),
+		'query_var' => true,
 		// Control the slugs used for this taxonomy
 		'rewrite' => array(
 			'slug' => 'portfolio-category', // This controls the base slug that will display before each term
@@ -80,16 +81,21 @@ function naztomizr_create_post_types(){
 				'singular_name' => __( 'Portfolio Post' ),
 				'all_items' => __( 'All Portfolio Posts' )
 				),
-			'description' => __('Individual portfolio item for Thirteen Ilicious Theme'),
+			'description' => __('Individual portfolio item for Naztomizr Theme'),
 			'public' => true,
+			'show_ui' => true,
+			'show_in_menu' => true,
 			'menu_position' => 5, //right after Post
 			'map_meta_cap' => true,
 			'rewrite' => array( 'slug' => 'portfolio' ), //rewrite for URL
 			'supports' => array( 'title', 'editor', 'thumbnail', 'revisions', 'page-attributes' ), //maybe add excerpt
-			'taxonomies' => array( 'portfolio_category' ),
+			'taxonomies' => array( 'post_tag', 'portfolio_category' ),
 			'has_archive' => true,
 		)
 	);
+
+//connects our custom taxonomy to this post type
+register_taxonomy_for_object_type( 'portfolio_category', 'naztomizr_portfolio');
 }
 
 /**

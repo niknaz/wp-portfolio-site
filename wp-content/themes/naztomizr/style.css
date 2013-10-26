@@ -1,0 +1,29 @@
+/*
+ Theme Name:     Naztomizr
+ Theme URI:      http://example.com/twenty-thirteen-child/
+ Description:    Customizr Child Theme
+ Author:         electroloop
+ Author URI:     http://electroloop.com
+ Template:       customizr
+ Version:        1.0.0
+*/
+
+@import url("../customizr/style.css");
+
+/* =Theme customization starts here
+-------------------------------------------------------------- */
+
+body {
+  margin: 0;
+  font-family: "Avant Garde", "Avantgarde", "Century Gothic", Helvetica, sans-serif;
+  font-size: 14px;
+  line-height: 20px;
+  color: #333333;
+  background-color: white;
+}
+a:hover,
+a:focus {
+	background-color: yellow;
+  color: #da3f96;
+  text-decoration: underline;
+}

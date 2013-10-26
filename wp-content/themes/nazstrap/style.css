@@ -1,0 +1,13 @@
+/*
+Theme Name: NazStrap
+Author: Niknaz Tavakolian
+Author URI: http://niknaz.net
+Description: Twitter Bootstrap3.
+Version: 1.1
+License: GNU General Public License v2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
+Tags: right-sidebar, flexible-width, custom-header, custom-menu, editor-style, featured-images, microformats, post-formats, rtl-language-support, sticky-post, translation-ready, bootstrap
+Text Domain: nazstrap
+*/
+
+@import url("assets/css/bootstrap.min.css");

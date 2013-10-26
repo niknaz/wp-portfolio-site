@@ -4,7 +4,7 @@
   * Adding all the jQueries
   */
  
-function load_thirteenilicious_scripts() {
+function load_naztomizr_scripts() {
 
 /* let's enqueue the libraries */
 	wp_enqueue_script(
@@ -14,7 +14,7 @@ function load_thirteenilicious_scripts() {
 	'1.3',
 	true /* in footer */
 	);
-	
+		
 	wp_enqueue_script(
 	'isotope', 
 	get_stylesheet_directory_uri() . '/js/jquery.isotope.min.js',
@@ -22,25 +22,31 @@ function load_thirteenilicious_scripts() {
 	'1.5.25',
 	true
 	);
-		
+	
+/* and enqueue the scripts */
+	wp_enqueue_script(
+	'naztomizr',
+	get_stylesheet_directory_uri() . '/js/naztomizr.js',
+	array( 'jquery' )
+	);		
 }
 
-add_action( 'wp_enqueue_scripts', 'load_thirteenilicious_scripts', 11);  
+add_action( 'wp_enqueue_scripts', 'load_naztomizr_scripts', 11);  
 
 /**
   * Adding custom taxonomies
   */
-add_action( 'init', 'naz_create_custom_tax' );
+add_action( 'init', 'naztomizr_create_custom_tax' );
 
-function create_custom_tax() {
-	register_taxonomy('portfolio_category', 'thirteenilicious_portfolio', array(
+function naztomizr_create_custom_tax() {
+	register_taxonomy('portfolio_category', 'naztomizr_portfolio', array( //reference theme name to avoid conflict
 		// Hierarchical taxonomy (like categories)
 		'hierarchical' => false,
 		// This array of options controls the labels displayed in the WordPress Admin UI
 		'labels' => array(
 			'name' => _x( 'Portfolio Categories', 'taxonomy general name' ),
 			'singular_name' => _x( 'Portfolio Category', 'taxonomy singular name' ),
-			'search_items' =>  __( 'Search Portoflio Categories' ),
+			'search_items' =>  __( 'Search Portflio Categories' ),
 			'all_items' => __( 'All Portfolio Categories' ),
 			'parent_item' => null,
 			'parent_item_colon' => null,
@@ -64,10 +70,10 @@ function create_custom_tax() {
   * (note: register_post_type() must be before the admin_menu 
   * and after the after_setup_theme action hooks)
   */
-add_action( 'init', 'naz_create_post_types' );
+add_action( 'init', 'naztomizr_create_post_types' );
 
-function forq_create_post_types(){
-	register_post_type( 'thirteenilicious_portfolio', //reference theme name to avoid conflict
+function naztomizr_create_post_types(){
+	register_post_type( 'naztomizr_portfolio', //reference theme name to avoid conflict
 		array(
 			'labels' => array(
 				'name' => __( 'Portfolio Posts' ),
@@ -85,5 +91,16 @@ function forq_create_post_types(){
 		)
 	);
 }
+
+/**
+  * Changing the word Post in the dashboard to Blog Post for clarity
+  * http://wp.tutsplus.com/tutorials/creative-coding/customizing-your-wordpress-admin/
+  */
+function edit_admin_menus() {
+	global $menu;
 	
+	$menu[5][0] = 'Blog Posts'; // Change Posts to Recipes
+}
+add_action( 'admin_menu', 'edit_admin_menus' );
+
 ?>

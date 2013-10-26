@@ -1,9 +1,9 @@
 /*
  Theme Name:     Naztomizr
- Theme URI:      http://example.com/twenty-thirteen-child/
+ Theme URI:      https://github.com/niknaz/wp-portfolio-site/wiki
  Description:    Customizr Child Theme
- Author:         electroloop
- Author URI:     http://electroloop.com
+ Author:         electroloop.com & Niknaz Tavakolian
+ Author URI:     electroloop.com & niknaz.net
  Template:       customizr
  Version:        1.0.0
 */
@@ -14,16 +14,17 @@
 -------------------------------------------------------------- */
 
 body {
-  margin: 0;
-  font-family: "Avant Garde", "Avantgarde", "Century Gothic", Helvetica, sans-serif;
-  font-size: 14px;
-  line-height: 20px;
-  color: #333333;
-  background-color: white;
+	
+  	margin: 0;
+  	font-family: "Avant Garde", "Avantgarde", "Century Gothic", Helvetica, sans-serif;
+  	font-size: 14px;
+  	line-height: 20px;
+  	color: #333333;
+  	background-color: white;
 }
 a:hover,
 a:focus {
-	background-color: yellow;
-  color: #da3f96;
-  text-decoration: underline;
+  	background-color: yellow;
+  	color: #da3f96;
+  	text-decoration: underline;
 }

@@ -1,5 +1,5 @@
 <?php
-/** content-naztomizr_portfolio.php
+/** -content-naztomizr_portfolio.php
  *
  * The template for displaying content on the archive page
  * using content-single as a guide

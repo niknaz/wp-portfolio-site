@@ -3,9 +3,9 @@ Contributors: Tobias Bohn
 Donate link: http://tb-webtec.de/instagram_picture/donate.php
 Tags: instagram, header, responsiv, widget, picture, image, sidebar, gallery, embed, embedded, Foto, Bilder, Shortcode
 Requires at least: 3.6
-Version: 2.0.1
+Version: 2.0.2
+Stable tag: 2.0.2
 Tested up to: 3.6
-Stable tag: 2.0.1
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -78,42 +78,21 @@ No. This plugin only saves the path to the picture in the database. The image it
 == Screenshots ==
 
 1. PHP-Code
-2. Lightbox
-3. PHP-Code
-4. Widget Instagram Picture
-5. Shortcode
-6. Widget Instagram Picture individually
-7. Widget Instagram Picture with User Info
-8. Site Instagram
-9. Site All Pictures
-10. Form PHP-Code
-11. Form PHP-Code Styles
-12. Form Widget Sytles
-13. Website Screen
-14. Shortcode
-15. Configuration
-16. Update photos
-17. All Widgets
-18. Widget Instagram Picture
-19. Widget Instagram Picture individually
-20. Widget Instagram Picture with Infos
-21. Widget Instagram Picture User Infos
+2. PHP-Code
+3. Widget Instagram Picture
+4. Shortcode
+5. Widget Instagram Picture individually
+6. Widget Instagram Picture with User Info
 
 == Upgrade Notice ==
-= Version 2.0 =
-New Module: Widget (User-Infos);
-New Module: Lightbox;
-New Module: Remove images (public or not public);
-New Module: Hover effect;
-Improvement: Code revision;
-Improvement: 15 new Styles (Widget);
-Improvement: Admin-Page Style;
-Improvement: Check whether there are enough pictures;
-Bugfix: Formular submit;
-Bugfix: cURL connection;
-Bugfix: Special character issue in title;
+Delete Module: Lightbox;
+New funktion: Direkt link;
 
 == Changelog ==
+
+= Version 2.0.2 (October 27, 2013) =
+* Delete Module: Lightbox
+* New funktion: Direkt link
 
 = Version 2.0.1 (October 24, 2013) =
 * New Module: Widget (User-Infos)

@@ -3,7 +3,7 @@
 Plugin Name: Instagram Picture
 Plugin URI: http://tb-webtec.de/instagram_picture/
 Description: Your Instagram photos as a PHP-Code, Widget or Shortcode
-Version: 2.0.1
+Version: 2.0.2
 Author: Tobias Bohn
 Author URI: https://twitter.com/tobias_bohn
 Requires at least: 3.0
@@ -24,7 +24,7 @@ License: GPLv2 or later
 	global $wpdb;
 
 	// infos
-	$instagram_picture_variable["0"]  = "2.0"; 																// version
+	$instagram_picture_variable["0"]  = "2.0.2"; 																// version
 	$instagram_picture_variable["5"]  = "25"; 																// optimized header angular (end of style-id)
 	$instagram_picture_variable["6"]  = "122";																// optimized header angular (round) (end of style-id)
 	$instagram_picture_variable["7"]  = "226";																// optimized widget angular (end of style-id)

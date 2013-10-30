@@ -11,6 +11,16 @@
 <?php do_action( '__before_main_wrapper' ); ##hook of the header with get_header ?>
 <?php tc__f('rec' , __FILE__ , __FUNCTION__ ); ?>
 <div id="main-wrapper" class="container">
+	<?php ##Adding a registered menu ?>
+	<section id="options" class="isotope-header span12">
+	<?php wp_nav_menu( array(
+		'theme_location' 	=> 'portfolio_secondary',
+		'container'			=> 'nav',
+		'container_class'	=> 'isotope-menu, portfolio-secondary',
+		'menu_class'		=> 'nav nav-tabs',
+		'items_wrap'		=> '<ul id="%1$s" class="%2$s"><li id="menu-desc">(filter by):</li>%3$s</ul>'
+	 )); ?>
+	</section><!-- .isotope-header -->
 
     <div class="container" role="main">
         <div class="row">
@@ -31,16 +41,8 @@
 
                         <?php if ( have_posts() && !is_404() ) : ?>
                         
-                        	<?php ##Adding a portfolio_secondary menu ?>
-                        	<header class="isotope-header span12">
-							<?php wp_nav_menu( array(
-							'theme_location' => 'portfolio_secondary',
-							'container_class' => 'isotope-menu, portfolio-secondary, navbar nav'
-							 )); ?>
-
-							</header><!-- .isotope-header -->
-
                             <?php while ( have_posts() ) : ##all other cases for single and lists: post, custom post type, page, archives, search, 404 ?>
+                            <section class="isotope-container full-width">
                                 <?php the_post(); ?>
                                 <article <?php tc__f('__portfolio_selectors') ?>>
                                     <?php
@@ -50,6 +52,7 @@
                             <?php endwhile; ?>
 
                         <?php endif; ##end if have posts ?>
+                            </section><!-- .isotope-container -->
 
                     <?php do_action ('__after_loop');##hook of the comments and the posts navigation with priorities 10 and 20 ?>
 

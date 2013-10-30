@@ -22,48 +22,39 @@
 	 )); ?>
 	</section><!-- .isotope-header -->
 
-    <div class="container" role="main">
-        <div class="row">
+    <div class="row-fluid" role="main">
+        <?php query_posts('post_type=naztomizr_portfolio&post_status=publish' ); ?>
 
-            <?php do_action( '__before_article_container'); ##hook of left sidebar?>
+         <div id="isotope" class="article-container">
 
-                <?php query_posts('post_type=naztomizr_portfolio&post_status=publish' ); ?>
+                <?php if ( tc__f('__is_no_results') || is_404() ) : ##no search results or 404 cases ?>
+                    <article <?php tc__f('__article_selectors') ?>>
+                        <?php do_action( '__loop' ); ?>
+                    </article>
+                <?php endif; ?>
 
-                <div class="<?php echo tc__f( '__screen_layout' , tc__f ( '__ID' ) , 'class' ) ?> article-container">
+                <?php if ( have_posts() && !is_404() ) : ?>
+                
+                    <?php while ( have_posts() ) : ##all other cases for single and lists: post, custom post type, page, archives, search, 404 ?>
+                        <?php the_post(); ?>
+                        <article <?php tc__f('__portfolio_selectors') ?>>
+                            <?php
+                                do_action( '__loop_portfolio' );
+                            ?>
+                        </article>
+                    <?php endwhile; ?>
 
-                    <?php do_action ('__before_loop');##hooks the header of the list of post : archive, search... ?>
+                <?php endif; ##end if have posts ?>
 
-                        <?php if ( tc__f('__is_no_results') || is_404() ) : ##no search results or 404 cases ?>
-                            <article <?php tc__f('__article_selectors') ?>>
-                                <?php do_action( '__loop' ); ?>
-                            </article>
-                        <?php endif; ?>
+            <?php do_action ('__after_loop');##hook of the comments and the posts navigation with priorities 10 and 20 ?>
 
-                        <?php if ( have_posts() && !is_404() ) : ?>
-                        
-                            <?php while ( have_posts() ) : ##all other cases for single and lists: post, custom post type, page, archives, search, 404 ?>
-                            <section class="isotope-container full-width">
-                                <?php the_post(); ?>
-                                <article <?php tc__f('__portfolio_selectors') ?>>
-                                    <?php
-                                        do_action( '__loop_portfolio' );
-                                    ?>
-                                </article>
-                            <?php endwhile; ?>
-
-                        <?php endif; ##end if have posts ?>
-                            </section><!-- .isotope-container -->
-
-                    <?php do_action ('__after_loop');##hook of the comments and the posts navigation with priorities 10 and 20 ?>
-
-                </div><!--.article-container -->
+         </div><!--.article-container -->
 
         	<?php wp_reset_query(); ?>
 
         	<?php do_action( '__after_article_container'); ##hook of left sidebar?>
 
-        </div><!--.row -->
-    </div><!-- .container role: main -->
+    </div><!-- #container role: main -->
 
     <?php do_action( '__after_main_container' ); ?>
 

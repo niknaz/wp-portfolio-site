@@ -394,7 +394,7 @@ class TC_post_list {
 
         //render the thumbnail
         if ( isset( $tc_thumb)) {
-              $html             = '<section class="tc-thumbnail span3">';
+              $html             = '<section class="tc-thumbnail">';
                  $html          .= '<div class="pull-left thumb-wrapper '.$no_effect_class.'">';
                     $html           .=  '<a class="round-div '.$no_effect_class.'" href="'.get_permalink( get_the_ID() ).'" title="'.get_the_title( get_the_ID()).'"></a>';
                     //$html         .= '<div class="round-div"></div>';

@@ -38,11 +38,14 @@ class TC_post_list {
         //defines the article layout : content + thumbnail
         add_action  ( '__loop'                        , array( $this , 'tc_post_list_layout'));
 
-        //defines the article layout : content + thumbnail
+        //defines the portfolio layout : content + thumbnail
         add_action  ( '__loop_portfolio'              , array( $this , 'tc_portfolio_list_layout'));
 
         //selector filter
         add_filter  ( '__article_selectors'           , array( $this , 'tc_post_list_selectors' ));
+
+        //selector filter
+        add_filter  ( '__portfolio_selectors'         , array( $this , 'tc_portfolio_list_selectors' ));
 
         //Include attachments in search results
         add_filter  ( 'pre_get_posts'                 , array( $this , 'tc_include_attachments_in_search' ));
@@ -81,9 +84,6 @@ class TC_post_list {
 
         //clean hooks actions until next loop
         remove_all_actions( '__post_list_layout' );
-        ?>
-          <hr class="featurette-divider">
-      <?php
     }
     
 
@@ -110,16 +110,13 @@ class TC_post_list {
         //alternative priority for content and thumbnail
         global $wp_query;
         $thumb_priority = ( 0 == $wp_query->current_post % 2 ) ? 30 : 10 ;
-        add_action ('__post_list_layout'      , array( $this, 'tc_post_list_thumbnail' ) , $thumb_priority);
+        add_action ('__post_list_layout'      , array( $this, 'tc_portfolio_list_thumbnail' ) , $thumb_priority);
         
         //renders the layout
         do_action ('__post_list_layout');
 
         //clean hooks actions until next loop
         remove_all_actions( '__post_list_layout' );
-        ?>
-          <hr class="featurette-divider">
-      <?php
     }
     
     
@@ -371,6 +368,48 @@ class TC_post_list {
 
 
       /**
+      * Displays the portfolio thumbnail or the first images attached to the post if any
+      *
+      * @package Customizr
+      * @since Customizr 3.0.10
+      */
+      function tc_portfolio_list_thumbnail() {
+        global $tc_has_thumbnail;
+        if ( !$tc_has_thumbnail )
+          return;
+       
+        global $wp_query;
+
+        if ( is_singular() || is_404() || (is_search() && 0 == $wp_query -> post_count) )
+          return;
+
+        //get tc_thumb = array($tc_thumb, $tc_thumb_width, $tc_thumb_height)
+        $tc_thumb = $this -> tc_get_post_list_thumbnail();
+
+        //handle the case when the image dimensions are too small
+        $no_effect_class            = '';
+        if (isset( $tc_thumb[0]) && ( $tc_thumb[1] < 270)) {
+          $no_effect_class          = 'no-effect';
+        }
+
+        //render the thumbnail
+        if ( isset( $tc_thumb)) {
+              $html             = '<section class="tc-thumbnail span3">';
+                 $html          .= '<div class="pull-left thumb-wrapper '.$no_effect_class.'">';
+                    $html           .=  '<a class="round-div '.$no_effect_class.'" href="'.get_permalink( get_the_ID() ).'" title="'.get_the_title( get_the_ID()).'"></a>';
+                    //$html         .= '<div class="round-div"></div>';
+                      $html             .= $tc_thumb[0];
+                $html           .= '</div>';
+              $html             .= '</section><!--.thumb_class-->'.tc__f( 'tip' , __FUNCTION__ , __CLASS__, __FILE__);
+
+          echo apply_filters( 'tc_portfolio_list_thumbnail', $html );
+        }//endif
+
+      }//end of function
+
+
+
+      /**
      * Displays the conditional selectors of the article
      * 
      * @package Customizr
@@ -385,6 +424,27 @@ class TC_post_list {
         tc__f('rec' , __FILE__ , __FUNCTION__, __CLASS__ );
 
         echo 'id="post-'.get_the_ID().'" '.tc__f('__get_post_class' , 'row-fluid');
+    }
+
+
+
+
+      /**
+     * Displays the conditional selectors of the portfolio page
+     * 
+     * Mainly taking out the row-fluid class so pull-left class on the thumbnails works
+     * @package Customizr
+     * @since 3.0.10
+     */
+    function tc_portfolio_list_selectors () {
+        //must be archive or not-null search result. Returns false if home is empty in option.
+        global $wp_query;
+        if ( is_singular() || is_404() || (is_search() && 0 == $wp_query -> post_count) || tc__f( '__is_home_empty') )
+          return;
+
+        tc__f('rec' , __FILE__ , __FUNCTION__, __CLASS__ );
+
+        echo 'id="post-'.get_the_ID().'" '.tc__f('__get_post_class');
     }
 
 

@@ -38,6 +38,9 @@ class TC_post_list {
         //defines the article layout : content + thumbnail
         add_action  ( '__loop'                        , array( $this , 'tc_post_list_layout'));
 
+        //defines the article layout : content + thumbnail
+        add_action  ( '__loop_portfolio'              , array( $this , 'tc_portfolio_list_layout'));
+
         //selector filter
         add_filter  ( '__article_selectors'           , array( $this , 'tc_post_list_selectors' ));
 
@@ -85,7 +88,41 @@ class TC_post_list {
     
 
 
+    /**
+     * The default template for displaying posts lists.
+     *
+     * @package Customizr
+     * @since Customizr 3.0.10
+     */
+    function tc_portfolio_list_layout() {
 
+      global $wp_query;
+      //must be archive or search result. Returns false if home is empty in option.
+      if ( is_singular() || is_404() || (is_search() && 0 == $wp_query -> post_count) || tc__f( '__is_home_empty') )
+        return;
+
+      tc__f('rec' , __FILE__ , __FUNCTION__, __CLASS__ );
+
+        tc__f( 'tip' , __FUNCTION__ , __CLASS__, __FILE__, 'right'); 
+        //we get the thumbnail if any
+        $this -> tc_get_post_list_thumbnail();
+
+        //alternative priority for content and thumbnail
+        global $wp_query;
+        $thumb_priority = ( 0 == $wp_query->current_post % 2 ) ? 30 : 10 ;
+        add_action ('__post_list_layout'      , array( $this, 'tc_post_list_thumbnail' ) , $thumb_priority);
+        
+        //renders the layout
+        do_action ('__post_list_layout');
+
+        //clean hooks actions until next loop
+        remove_all_actions( '__post_list_layout' );
+        ?>
+          <hr class="featurette-divider">
+      <?php
+    }
+    
+    
     /**
      * The template part for displaying the posts header
      *

@@ -1,10 +1,13 @@
 <?php 
+/*
+ * CUSTOM FUNCTIONS FOR THE NAZTOMIZR THEME
+ */
+
 
 /**
-  * Adding all the jQueries
+  * Adding the jQueries
   */
- 
-function load_naztomizr_scripts() {
+ function load_naztomizr_scripts() {
 
 /* let's enqueue the libraries */
 	wp_enqueue_script(
@@ -32,6 +35,9 @@ function load_naztomizr_scripts() {
 }
 
 add_action( 'wp_enqueue_scripts', 'load_naztomizr_scripts', 11);  
+
+
+
 
 /**
   * Adding custom taxonomies for Portfolio Category
@@ -108,5 +114,15 @@ function edit_admin_menus() {
 	$menu[5][0] = 'Blog Posts'; // Change Posts to Recipes
 }
 add_action( 'admin_menu', 'edit_admin_menus' );
+
+
+
+/*
+ * Registering a menu for the portfolio content type categories 
+ */
+function register_other_menus() {
+	register_nav_menu( 'portfolio_secondary', __( 'Portfolio Secondary Menu' ));
+}
+add_action( 'init', 'register_other_menus' );
 
 ?>

@@ -31,34 +31,13 @@
 
                         <?php if ( have_posts() && !is_404() ) : ?>
                         
-                        	<?php ##Adding a custom clickable category filter for isotope. Need to have this hook into the classes... 
-                        		  ##until then, this is a solution ?>
+                        	<?php ##Adding a portfolio_secondary menu ?>
                         	<header class="isotope-header span12">
-								<nav id="isotope-nav" class="nav span6" data-option-key="filter">
-								<?php  
-									/* let's get the categories here 
-									 * thanks to here: 
-									 * http://www.paulund.co.uk/display-categories-of-a-custom-post-type */
-									 
-								$customPostTaxonomies = get_object_taxonomies('naztomizr_portfolio');
-				
-									if(count($customPostTaxonomies) > 0)
-									{
-									     foreach($customPostTaxonomies as $tax)
-									     {
-										     $args = array(
-									         	  'orderby' => 'name',
-										          'show_count' => 0,
-									        	  'pad_counts' => 0,
-										          'hierarchical' => 1,
-									        	  'taxonomy' => $tax,
-									        	  'title_li' => ''
-									        	);
-									
-										     wp_list_categories( $args );
-									     }
-									} ?>
-								</nav><!-- .secondary-nav -->
+							<?php wp_nav_menu( array(
+							'theme_location' => 'portfolio_secondary',
+							'container_class' => 'isotope-menu, portfolio-secondary, navbar nav'
+							 )); ?>
+
 							</header><!-- .isotope-header -->
 
                             <?php while ( have_posts() ) : ##all other cases for single and lists: post, custom post type, page, archives, search, 404 ?>

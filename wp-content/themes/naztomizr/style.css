@@ -64,8 +64,19 @@ h2.site-description{
 	background-image: none;
 	margin: 0;
 	background-color: transparent;	
-	padding-top: 24px;
+	padding-top: 27px;
 	float: right;
+}
+.navbar .nav > li > a {
+	padding: 0 !important;
+}
+.navbar .nav > li > a:focus,
+.navbar .nav > li > a:hover {
+	background-color: yellow;
+	font-style: italic;
+}
+.navbar .nav > li.current-menu-item {
+	font-style: italic;
 }
 
 /* ISOTOPE */

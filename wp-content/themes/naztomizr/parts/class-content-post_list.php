@@ -449,10 +449,15 @@ class TC_post_list {
         tc__f('rec' , __FILE__ , __FUNCTION__, __CLASS__ );
         
         //grabbing the custom taxonomy term (i.e. category) and adding it in the class section
-        //many thanks to this post: http://bit.ly/gKdblI
-		$terms_as_text = strtolower( strip_tags( get_the_term_list( $id, 'portfolio_category', '', ' ', '' ) ) );
+        //many thanks to Codex article on get_the_terms()
+		$terms = get_the_terms($id, 'portfolio_category');
+		$cat_links = array();
+		foreach ( $terms as $term ){
+			$cat_links[] = $term->slug; //only grabbing the slug!!
+		}
+		$output = join( " ", $cat_links );
 		
-        echo 'id="post-'.$id.'" '.tc__f('__get_post_class', $terms_as_text);
+        echo 'id="post-'.$id.'" '.tc__f('__get_post_class', $output );
     }
 
 

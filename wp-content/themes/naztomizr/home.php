@@ -18,7 +18,7 @@
 		'container'			=> 'nav',
 		'container_class'	=> 'isotope-menu, portfolio-secondary',
 		'menu_class'		=> 'nav nav-tabs',
-		'items_wrap'		=> '<ul id="%1$s" class="%2$s"><li id="menu-desc">(filter by):</li>%3$s</ul>'
+		'items_wrap'		=> '<ul id="%1$s" class="%2$s">%3$s</ul>'
 	 )); ?>
 	</section><!-- .isotope-header -->
 

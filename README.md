@@ -9,5 +9,5 @@ Customizr seems the most versatile and has Bootstrap3 baked in. The Customizr th
 
 This repository has only the essential WordPress files. This assumes you already have a database and WordPress installed. You must first follow the instructions on: http://codex.wordpress.org/Installing_WordPress
 
-To see what files are not included, take a look at the .gitignore file. 
+To see what files are not included, take a look at the .gitignore file. Obviously, there's not database, so you'll have to populate it with your content. 
 

@@ -45,8 +45,8 @@ function form($config)
    	   if($config['link'] == "0" OR empty($config['link'])){ $result_link_output="Do Nothing"; $config['link']="0";}
 			if($config['link'] == "1"){ $result_link_output="Original Page";}
 			if($config['link'] == "2"){ $result_link_output="Original Page with hover-effect";}
-			if($config['link'] == "3"){ $result_link_output="Lightbox";}
-			if($config['link'] == "4"){ $result_link_output="Lightbox with hover-effect";}
+			if($config['link'] == "3"){ $result_link_output="Direct link";}
+			if($config['link'] == "4"){ $result_link_output="Direct link with hover-effect";}
     ?>
     <label for="<?php echo $this->get_field_id("link");?>">
     <p>Picture linkable:<br>
@@ -55,8 +55,8 @@ function form($config)
     				  		<?php if($config['link'] != "0"){echo '<option value="0">Do Nothing</option>';}
       					if($config['link'] != "1"){echo '<option value="1">Original Page</option>';}
       					if($config['link'] != "2"){echo '<option value="2">Original Page with hover-effect</option>';}
-      					if($config['link'] != "3"){echo '<option value="3">Lightbox</option>';}
-      					if($config['link'] != "4"){echo '<option value="4">Lightbox with hover-effect</option>';} 
+      					if($config['link'] != "3"){echo '<option value="3">Direct link</option>';}
+      					if($config['link'] != "4"){echo '<option value="4">Direct link with hover-effect</option>';} 
      						?>
     					</select>
     </p>
@@ -154,13 +154,13 @@ function widget($instance, $instagram)
 			if($result_link == "3")
 			{
 				$widget_id = str_replace("instagram_picture_individually-", "", $widget_id);
-				$link_anfang = '<a href="'.$standard_resolution.'" data-lightbox="lightbox_instagram_picture_'.$widget_id.'" data-lightbox="roadtrip" title="'.$title.'">';
+				$link_anfang = '<a href="'.$standard_resolution.'" title="'.$title.'">';
 				$link_ende = '</a>';
 			}
 			if($result_link == "4")
 			{
 				$widget_id = str_replace("instagram_picture_individually-", "", $widget_id);
-				$link_anfang = '<div class="instagram-picture-hover"><a href="'.$standard_resolution.'" data-lightbox="lightbox_instagram_picture_'.$widget_id.'" data-lightbox="roadtrip" title="'.$title.'">';
+				$link_anfang = '<div class="instagram-picture-hover"><a href="'.$standard_resolution.'" title="'.$title.'">';
 				$link_ende = '</a></div>';
 			}
 			

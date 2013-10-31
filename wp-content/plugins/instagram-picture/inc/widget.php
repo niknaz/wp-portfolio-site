@@ -52,7 +52,7 @@ function instagram_picture_widget() {
 							This widget allows you to highlight a picture<br/>
 							<b>Title</b> - The heading<br />
 							<b>Picture-ID</b> - Picture ID (IDs can be found here <a href="?page=instagram_picture_alle_bilder">All Pictures</a>)<br />
-							<b>Picture linkable</b> - Linking to Instagram Page or Lightbox <br />
+							<b>Picture linkable</b> - Linking to Instagram Page or Direct link <br />
 							<b>Picture title</b> - The title as mouse-over<br />
 							<b>Border-Radius</b> - percent indicating whether the image should be round.
 							</div>
@@ -65,7 +65,7 @@ function instagram_picture_widget() {
 							Several images with a style<br />
 							<b>Title</b> - The heading<br />
 							<b>Style-ID</b> - Style ID (A list is below)<br />
-							<b>Picture linkable</b> - Linking to Instagram Page or Lightbox <br />
+							<b>Picture linkable</b> - Linking to Instagram Page or Direct link <br />
 							<b>Picture title</b> - The title as mouse-over<br />
 							<b>Border-Radius</b> - percent indicating whether the image should be round.
 							</div>
@@ -78,7 +78,7 @@ function instagram_picture_widget() {
 							This widget allows you to highlight a picture with Infos<br/>
 							<b>Title</b> - The heading<br />
 							<b>Picture-ID</b> - Picture ID (IDs can be found here <a href="?page=instagram_picture_alle_bilder">All Pictures</a>)<br />
-							<b>Picture linkable</b> - Linking to Lightbox <br />
+							<b>Picture linkable</b> - Linking to Direct link <br />
 							<b>Width</b> - width of the div box<br>
 							<b>bacolor</b> - Border-Color (Standard: 4D4D4D)<br />
 							<b>bacolor</b> - Background-Color (Standard: 4D4D4D)<br />
@@ -93,7 +93,7 @@ function instagram_picture_widget() {
 							<h4>Instagram Picture User Infos</h4>
 							<b>Update</b> - DB or live (Standard: DB)<br />
 							<b>With Picture:</b> - Yes or No (Standard: No)<br />
-							<b>Picture linkable</b> - Linking to Instagram Page or Lightbox <br />
+							<b>Picture linkable</b> - Linking to Instagram Page or Direct link <br />
 							(Test-Style width 250px; Picture: Yes, Link: Yes)
 							<div style="width:250px;margin:0 auto;">
 							';

@@ -1,29 +1,132 @@
 /*
  Theme Name:     Naztomizr
- Theme URI:      http://example.com/twenty-thirteen-child/
+ Theme URI:      https://github.com/niknaz/wp-portfolio-site/wiki
  Description:    Customizr Child Theme
- Author:         electroloop
- Author URI:     http://electroloop.com
+ Author:         electroloop.com & Niknaz Tavakolian
+ Author URI:     electroloop.com & niknaz.net
  Template:       customizr
  Version:        1.0.0
 */
 
-@import url("../customizr/style.css");
 
 /* =Theme customization starts here
 -------------------------------------------------------------- */
 
 body {
-  margin: 0;
-  font-family: "Avant Garde", "Avantgarde", "Century Gothic", Helvetica, sans-serif;
-  font-size: 14px;
-  line-height: 20px;
-  color: #333333;
-  background-color: white;
+	
+  	margin: 0;
+  	font-family: "Avant Garde", "Avantgarde", "Century Gothic", Helvetica, sans-serif;
+  	font-size: 14px;
+  	line-height: 20px;
+  	color: #333333;
+  	background-color: white;
 }
 a:hover,
 a:focus {
+  	background-color: yellow;
+  	color: #da3f96;
+  	text-decoration: underline;
+}
+
+/* HEADER */
+.tc-header{
+	height: 90px;
+	background-image: url(images/purp2.gif);
+
+}
+/* make me sticky again! 
+#sticky-header{
+	background-image: url(images/purp2.gif);
+	position: fixed;
+	width: 100%;
+	height: 89px;
+	z-index: 3;
+} */
+
+/* BRAND */
+h2.site-description{
+	display: none !important;
+}
+.brand {
+	padding-top: 50px !important;
+}
+.brand h1 {
+	text-transform: uppercase;
+	font-style: italic;
+}
+
+/* PRIMARY MENU */
+.navbar-wrapper .navbar {
+	margin: 0;
+}
+.navbar .navbar-inner{
+	box-shadow: none;
+	background-image: none;
+	margin: 0;
+	background-color: transparent;	
+	padding-top: 27px;
+	float: right;
+}
+.navbar .nav > li > a {
+	padding: 0 !important;
+}
+.navbar .nav > li > a:focus,
+.navbar .nav > li > a:hover {
 	background-color: yellow;
-  color: #da3f96;
-  text-decoration: underline;
+	font-style: italic;
+}
+.navbar .nav > li.current-menu-item {
+	font-style: italic;
+}
+
+/* ISOTOPE */
+
+/**** Isotope Filtering ****/
+
+.isotope-item {
+  z-index: 2;
+}
+
+.isotope-hidden.isotope-item {
+  pointer-events: none;
+  z-index: 1;
+}
+
+/**** Isotope CSS3 transitions ****/
+
+.isotope,
+.isotope .isotope-item {
+  -webkit-transition-duration: 0.8s;
+     -moz-transition-duration: 0.8s;
+      -ms-transition-duration: 0.8s;
+       -o-transition-duration: 0.8s;
+          transition-duration: 0.8s;
+}
+
+.isotope {
+  -webkit-transition-property: height, width;
+     -moz-transition-property: height, width;
+      -ms-transition-property: height, width;
+       -o-transition-property: height, width;
+          transition-property: height, width;
+}
+
+.isotope .isotope-item {
+  -webkit-transition-property: -webkit-transform, opacity;
+     -moz-transition-property:    -moz-transform, opacity;
+      -ms-transition-property:     -ms-transform, opacity;
+       -o-transition-property:      -o-transform, opacity;
+          transition-property:         transform, opacity;
+}
+
+/**** disabling Isotope CSS3 transitions ****/
+
+.isotope.no-transition,
+.isotope.no-transition .isotope-item,
+.isotope .isotope-item.no-transition {
+  -webkit-transition-duration: 0s;
+     -moz-transition-duration: 0s;
+      -ms-transition-duration: 0s;
+       -o-transition-duration: 0s;
+          transition-duration: 0s;
 }

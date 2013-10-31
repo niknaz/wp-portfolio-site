@@ -26,8 +26,7 @@ function instagram_picture_shortcode_doku() {
 					<br />
 					<b>size</b> - Image size (Standard: 150px)
 					<br />
-					<b>link</b> - Picture linkable (Instagram-Page: 1; Lightbox:2) (Standard: no)
-					<br />
+					<b>link</b> - Picture linkable (Instagram-Page: 1; Direct link:2) (Standard: no)
 					<br />
 					<b>info</b> - Picture Info (Yes: yes or 1 - No: leave empty) (Standard: no)
 					<br />

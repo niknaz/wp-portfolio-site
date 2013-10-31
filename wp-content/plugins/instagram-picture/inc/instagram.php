@@ -126,25 +126,6 @@ function instagram_picture_instagram()
 		<hr />
 		';
 		
-		echo '
-			<h2>Extension used</h2>
-				<div class="row-instagram_admin">
-					<div class="col-instagram-3_admin instagram-picture-box-in">
-						<h3>Lightbox</h3>
-							<p>Version: 2.6</p>
-							<p>Website: <a href="http://lokeshdhakar.com/projects/lightbox2/" target="_blank">http://lokeshdhakar.com/projects/lightbox2/</a></p>
-							<p>Licenses: <a href="http://creativecommons.org/licenses/by/2.5/" target="_blank">Creative Commons Attribution 2.5 License</a></p>
-					</div>
-					<div class="col-instagram-3_admin col-instagram-offset-1_admin instagram-picture-box-in">
-						<h3>jQuery</h3>
-							<p>Version: 1.10.2</p>
-							<p>Website: <a href="http://blog.jqueryui.com/2013/03/jquery-ui-1-10-2/" target="_blank">jQuery V1.10.2</a></p>
-							<p>Licenses: <a href="https://github.com/jquery/jquery/blob/master/MIT-LICENSE.txt" target="_blank">MIT</a></p>
-					</div>
-				</div>
-			<div class="instagram_clear_admin"></div>
-		';
-		
 echo '		</div>';
 	########################################################################################################################
 }

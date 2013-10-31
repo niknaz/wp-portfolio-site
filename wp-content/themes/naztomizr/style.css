@@ -28,6 +28,46 @@ a:focus {
   	text-decoration: underline;
 }
 
+/* HEADER */
+.tc-header{
+	height: 90px;
+	background-image: url(images/purp2.gif);
+
+}
+/* make me sticky again! 
+#sticky-header{
+	background-image: url(images/purp2.gif);
+	position: fixed;
+	width: 100%;
+	height: 89px;
+	z-index: 3;
+} */
+
+/* BRAND */
+h2.site-description{
+	display: none !important;
+}
+.brand {
+	padding-top: 50px !important;
+}
+.brand h1 {
+	text-transform: uppercase;
+	font-style: italic;
+}
+
+/* PRIMARY MENU */
+.navbar-wrapper .navbar {
+	margin: 0;
+}
+.navbar .navbar-inner{
+	box-shadow: none;
+	background-image: none;
+	margin: 0;
+	background-color: transparent;	
+	padding-top: 24px;
+	float: right;
+}
+
 /* ISOTOPE */
 
 /**** Isotope Filtering ****/

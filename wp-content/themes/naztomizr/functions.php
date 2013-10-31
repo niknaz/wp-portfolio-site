@@ -25,6 +25,14 @@
 	'1.5.25',
 	true
 	);
+
+	wp_enqueue_script(
+	'waypoints', 
+	get_stylesheet_directory_uri() . '/js/waypoints.min.js',
+	array('jquery'),
+	'2.0.3',
+	true
+	);
 	
 /* and enqueue the scripts */
 	wp_enqueue_script(

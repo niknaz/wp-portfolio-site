@@ -11,6 +11,12 @@ var $j = jQuery;
 $j(function(){
 ////////// begin sitewide functions /////////////////
 
+//sticky the menu
+$j('#sticky-header').waypoints('sticky', {
+	offset : 30
+});
+
+
 /**																						*
   *-------------------------------------------------------------------------------------*
   * 								ISOTOPE FRONT PAGE	  								*

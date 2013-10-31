@@ -432,20 +432,29 @@ class TC_post_list {
       /**
      * Displays the conditional selectors of the portfolio page
      * 
-     * Mainly taking out the row-fluid class so pull-left class on the thumbnails works
-     * @package Customizr
-     * @since 3.0.10
+     * Took out the row-fluid class so pull-left class on the thumbnails works
+     * and added the category (custom taxonomy term) to the class 
+     *
+     * @package Naztomizr
+     * @since 1.0
      */
     function tc_portfolio_list_selectors () {
         //must be archive or not-null search result. Returns false if home is empty in option.
         global $wp_query;
+        $id = get_the_id();
+
         if ( is_singular() || is_404() || (is_search() && 0 == $wp_query -> post_count) || tc__f( '__is_home_empty') )
-          return;
+          return;         
 
         tc__f('rec' , __FILE__ , __FUNCTION__, __CLASS__ );
-
-        echo 'id="post-'.get_the_ID().'" '.tc__f('__get_post_class');
+        
+        //grabbing the custom taxonomy term (i.e. category) and adding it in the class section
+        //many thanks to this post: http://bit.ly/gKdblI
+		$terms_as_text = strtolower( strip_tags( get_the_term_list( $id, 'portfolio_category', '', ' ', '' ) ) );
+		
+        echo 'id="post-'.$id.'" '.tc__f('__get_post_class', $terms_as_text);
     }
+
 
 
 

@@ -86,7 +86,7 @@ class TC_post {
         <?php 
             $bubble_style                      = ( 0 == get_comments_number() ) ? 'style="color:#ECECEC" ':'';
 
-            printf( '<h1 class="entry-title format-icon">%1$s %2$s %3$s</h1>' ,
+            printf( '<h3 class="entry-title format-icon">%1$s %2$s %3$s</h3>' ,
             get_the_title(),
             ( comments_open() && get_comments_number() != 0 && !post_password_required() ) ? '<span class="comments-link">
                 <a href="'.get_permalink().'#tc-comment-title" title="'.__( 'Comment(s) on ' , 'customizr' ).get_the_title().'"><span '.$bubble_style.' class="fs1 icon-bubble"></span><span class="inner">'.get_comments_number().'</span></a>
@@ -95,6 +95,9 @@ class TC_post {
             );
 
         ?>
+        
+        <div class="portfolio-year"><h4><?php the_field('year_portfolio'); ?></h4></div>
+        
         <div class="entry-meta">
 
             <?php //meta not displayed on home page, only in archive or search pages
@@ -104,7 +107,6 @@ class TC_post {
             ?>
 
         </div><!-- .entry-meta -->
-
       </header><!-- .entry-header -->
       <?php
       $html = ob_get_contents();
@@ -140,8 +142,6 @@ class TC_post {
         ?>
               
               <?php do_action( '__before_content' ); ?>
-
-              <?php echo '<hr class="featurette-divider">' ?>
 
               <?php tc__f( 'tip' , __FUNCTION__ , __CLASS__, __FILE__ ); ?>    
 

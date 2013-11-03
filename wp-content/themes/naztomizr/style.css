@@ -142,3 +142,21 @@ nav.portfolio-secondary {
        -o-transition-duration: 0s;
           transition-duration: 0s;
 }
+
+/*INDIVIDUAL POST PAGES*/
+#nav-below .assistive-text {
+	display: none;
+}
+
+.pager li > span {
+	border: none;
+}
+.pager a{
+	font-size: 75%;
+	color: gray;
+	text-decoration: none;
+}
+.single-naztomizr_portfolio #main-wrapper .tc-hot-crumble,
+.naztomizr_portfolio .entry-header .entry-meta {
+	display: none;
+}

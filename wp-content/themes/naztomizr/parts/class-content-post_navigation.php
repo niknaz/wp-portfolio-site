@@ -21,7 +21,7 @@ class TC_post_navigation {
 
         self::$instance =& $this;
 
-        add_action  ( '__after_loop'                         , array( $this , 'tc_post_nav' ), 20 );
+        add_action  ( '__before_main_container'                         , array( $this , 'tc_post_nav' ), 10 );
     }
 
 
@@ -48,7 +48,6 @@ class TC_post_navigation {
       ob_start();
       ?>
       <?php if ( is_singular() ) : ?>
-        <hr class="featurette-divider">
 
         <nav id="<?php echo $html_id; ?>" class="navigation" role="navigation">
           <?php tc__f( 'tip' , __FUNCTION__ , __CLASS__, __FILE__); ?>

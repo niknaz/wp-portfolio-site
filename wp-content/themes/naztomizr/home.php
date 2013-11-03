@@ -10,13 +10,13 @@
 
 <?php do_action( '__before_main_wrapper' ); ##hook of the header with get_header ?>
 <?php tc__f('rec' , __FILE__ , __FUNCTION__ ); ?>
-<div id="main-wrapper" class="container">
+<div id="main-wrapper" class="portfolio-container">
 	<?php ##Adding a registered menu ?>
-	<section id="options" class="isotope-header span12">
+	<section id="options" class="isotope-header row-fluid">
 	<?php wp_nav_menu( array(
 		'theme_location' 	=> 'portfolio_secondary',
 		'container'			=> 'nav',
-		'container_class'	=> 'isotope-menu, portfolio-secondary',
+		'container_class'	=> 'isotope-menu portfolio-secondary span8',
 		'menu_class'		=> 'nav nav-tabs',
 		'items_wrap'		=> '<ul id="%1$s" class="%2$s">%3$s</ul>'
 	 )); ?>
@@ -25,7 +25,7 @@
     <div class="row-fluid" role="main">
         <?php query_posts('post_type=naztomizr_portfolio&post_status=publish' ); ?>
 
-         <div id="isotope" class="article-container">
+         <div id="isotope" class="article-container clearfix">
 
                 <?php if ( tc__f('__is_no_results') || is_404() ) : ##no search results or 404 cases ?>
                     <article <?php tc__f('__article_selectors') ?>>

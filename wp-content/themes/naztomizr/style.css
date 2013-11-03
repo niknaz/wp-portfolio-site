@@ -79,7 +79,19 @@ h2.site-description{
 	font-style: italic;
 }
 
+
+/* SECONDARY-MENU (isotope-menu */
+nav.portfolio-secondary {
+	float: none !important;
+	margin-left: auto !important;
+	margin-right: auto !important;
+}
+
 /* ISOTOPE */
+
+#isotope{
+	margin: 0 auto 20px;
+}
 
 /**** Isotope Filtering ****/
 

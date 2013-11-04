@@ -69,6 +69,7 @@ class MC4WP_Lite_Form {
 			// replace special values
 			$form_markup = str_replace( array( '%N%', '{n}' ), $this->form_instance_number, $form_markup );
 			$form_markup = mc4wp_replace_variables( $form_markup, array_values( $opts['lists'] ) );
+			$form_markup = apply_filters('mc4wp_form_content', $form_markup);
 			$content .= $form_markup;
 
 			// hidden fields
@@ -168,8 +169,8 @@ class MC4WP_Lite_Form {
 						$grouping['name'] = $grouping_id_or_name;
 					}
 
-					if ( is_array( $groups ) ) {
-						$grouping['groups'] = implode( ',', $groups );
+					if ( !is_array( $groups ) ) {
+						$grouping['groups'] = explode( ',', $groups );
 					} else {
 						$grouping['groups'] = $groups;
 					}

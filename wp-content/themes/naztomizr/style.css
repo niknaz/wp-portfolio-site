@@ -32,7 +32,12 @@ a:focus {
 .tc-header{
 	height: 90px;
 	background-image: url(images/purp2.gif);
-
+	position: fixed;
+	top: 0;
+	opacity: .9;
+	-moz-opacity: .9;
+	-webkit-opacity: .9%;
+	filter:alpha(opacity=90);
 }
 /* make me sticky again! 
 #sticky-header{
@@ -42,6 +47,11 @@ a:focus {
 	height: 89px;
 	z-index: 3;
 } */
+
+/* MAIN WRAPPER */
+#main-wrapper {
+	margin-top: 120px;
+}
 
 /* BRAND */
 h2.site-description{
@@ -156,7 +166,48 @@ nav.portfolio-secondary {
 	color: gray;
 	text-decoration: none;
 }
-.single-naztomizr_portfolio #main-wrapper .tc-hot-crumble,
+/*.single-naztomizr_portfolio #main-wrapper .tc-hot-crumble,*/
 .naztomizr_portfolio .entry-header .entry-meta {
 	display: none;
+}
+
+.featurette-divider {
+	margin: 0;
+}
+
+/* PAGES */
+
+/* FOOTER */
+footer#footer p, footer#footer a {
+	text-align: left;
+}
+/* yinstagram */
+.widget li::before {
+	content: none;
+}
+/* contact */
+#footer-contact-first-p > span {
+	padding-right: 104px;
+	margin-right: 9px;
+}
+
+#footer-contact-second-p > span input {
+	margin-bottom: 4px;
+}
+.footer-name{
+	margin-right: 9px;
+}
+.textbox, .captcha-input {
+	width: 125px;
+}
+.emailbox {
+	width: 150px;
+}
+
+#footer-contact-captcha{
+	height: 28px;
+	margin: 0 5px 10px 0;
+}
+#footer-submit{
+	margin: 0 0 10px 36px;
 }

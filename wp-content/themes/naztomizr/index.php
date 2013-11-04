@@ -41,7 +41,6 @@
                         <?php endif; ##end if have posts ?>
 
                     <?php do_action ('__after_loop');##hook of the comments and the posts navigation with priorities 10 and 20 ?>
-					<p>THIS IS A TEST</p>
                 </div><!--.article-container -->
 
            <?php do_action( '__after_article_container'); ##hook of left sidebar?>

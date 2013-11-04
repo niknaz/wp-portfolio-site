@@ -146,7 +146,8 @@ class TC_post_list {
 
                   if ((get_the_title() != null)) {
                       printf( 
-                          '<h2 class="entry-title format-icon">%1$s %2$s</h2>' ,
+                      	  // TAKING OUT THE .FORMAT-ICON!! 
+                          '<h2 class="entry-title">%1$s %2$s</h2>' ,
                           '<a href="'.get_permalink().'" title="'.esc_attr( sprintf( __( 'Permalink to %s' , 'customizr' ), the_title_attribute( 'echo=0' ) ) ).'" rel="bookmark">'.((get_the_title() == null) ? __( '{no title} Read the post &raquo;' , 'customizr' ):get_the_title()).'</a>' ,
                           //check if comments are opened AND if there are comments to display
                           (comments_open() && get_comments_number() != 0) ? '<span class="comments-link"><span '.$style.' class="fs1 icon-bubble"></span><span class="inner">'.get_comments_number().'</span></span>' : ''

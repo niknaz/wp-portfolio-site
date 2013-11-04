@@ -133,4 +133,14 @@ function register_other_menus() {
 }
 add_action( 'init', 'register_other_menus' );
 
+/* Moving the image slider */
+//we hook the code on the wp_head hook, this way it will be executed before any html rendering.
+add_action ( 'wp_head' , 'move_my_slider');
+function move_my_slider() {
+	//we unhook the slider
+	remove_action( '__after_header' , array( TC_slider::$instance , 'tc_slider_display' ));
+
+	//we re-hook the slider. Check the priority here : set to 0 to be the first in the list of different actions hooked to this hook 
+	add_action( '__before_main_container' , array( TC_slider::$instance , 'tc_slider_display' ), 11);
+}
 ?>

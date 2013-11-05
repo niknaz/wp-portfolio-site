@@ -49,20 +49,20 @@ class TC_post_navigation {
       ?>
       <?php if ( is_singular() ) : ?>
 
-        <nav id="<?php echo $html_id; ?>" class="navigation" role="navigation">
+        <nav id="<?php echo $html_id; ?>" class="navigation row" role="navigation">
           <?php tc__f( 'tip' , __FUNCTION__ , __CLASS__, __FILE__); ?>
             <h3 class="assistive-text"><?php _e( 'Post navigation' , 'customizr' ); ?></h3>
 
             <ul class="pager">
               <?php if ( get_previous_post() != null ) : ?>
-                <li class="previous">
+                <li class="previous span4">
                   <span class="nav-previous"><?php previous_post_link( '%link' , '<span class="meta-nav">' . _x( '&larr;' , 'Previous post link' , 'customizr' ) . '</span> %title' ); ?></span>
                 </li>
               <?php endif; ?>
               
                 <?php 
                 // ADDING a return in the post nav to the relevent PAGE of posts ?>
-			    <li class="return">
+			    <li class="return span4">
 			  	  <span class="nav-return">
 				  	  <?php if ( is_singular( 'naztomizr_portfolio' )) {
 					  	   $page = get_page_by_title( 'home' ); 
@@ -74,7 +74,7 @@ class TC_post_navigation {
 			  	</li>
 
               <?php if ( get_next_post() != null ) : ?>
-                <li class="next">
+                <li class="next span4">
                   <span class="nav-next"><?php next_post_link( '%link' , '%title <span class="meta-nav">' . _x( '&rarr;' , 'Next post link' , 'customizr' ) . '</span>' ); ?></span>
                 </li>
               <?php endif; ?>

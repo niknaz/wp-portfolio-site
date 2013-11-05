@@ -395,9 +395,12 @@ class TC_post_list {
 
         //render the thumbnail
         if ( isset( $tc_thumb)) {
+        	$title 	= get_the_title( get_the_id() );
+        	$year		= get_field('year_portfolio');
               $html             = '<section class="tc-thumbnail">';
                  $html          .= '<div class="pull-left thumb-wrapper '.$no_effect_class.'">';
-                    $html           .=  '<a class="round-div '.$no_effect_class.'" href="'.get_permalink( get_the_ID() ).'" title="'.get_the_title( get_the_ID()).'"></a>';
+                 	//adding the title and date as an overlay
+                    $html           .=  '<a class="round-div '.$no_effect_class.'" href="'.get_permalink( get_the_ID() ).'" title="'.$title.'"><div><p class="portfolio-title">'.$title.'</p><p class="portfolio-year">'.$year.'</p></div></a>';
                     //$html         .= '<div class="round-div"></div>';
                       $html             .= $tc_thumb[0];
                 $html           .= '</div>';

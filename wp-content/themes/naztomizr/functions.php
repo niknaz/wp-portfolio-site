@@ -41,6 +41,22 @@
 	'1.0', 
 	true
 	);
+
+	wp_enqueue_script(
+	'hoverdir', 
+	get_stylesheet_directory_uri() . '/js/jquery.hoverdir.js', 
+	array('jquery'), 
+	'1.1.1', 
+	true
+	);
+
+	wp_enqueue_script(
+	'modernizr.custom', 
+	get_stylesheet_directory_uri() . '/js/modernizr.custom.97074.js', 
+	array('jquery'), 
+	'2.6.2', 
+	true
+	);
 	
 /* and enqueue the scripts */
 	wp_enqueue_script(

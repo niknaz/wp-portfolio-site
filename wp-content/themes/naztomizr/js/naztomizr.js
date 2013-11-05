@@ -9,11 +9,18 @@
 var $j = jQuery;
 
 $j(function(){
-////////// begin sitewide functions /////////////////
+/////////////////////////////// begin sitewide functions ////////////////////////////////
 
-//sticky the menu currently not in use
+/**																						*
+  *-------------------------------------------------------------------------------------*
+  * 								WAYPOINTS STICKY	  								*
+  *	----------------------------------------------------------------------------------- *
+  *						http://imakewebthings.com/jquery-waypoints/  					*
+  *										 Holy Shit!										*
+  *-------------------------------------------------------------------------------------*/
 $j('#nav-below').waypoint('sticky', {
-	offset: 100
+	wrapper	: '<div class="nav-below-sticky-wrapper" />',
+	offset	: 100 //100px is reletive to header ht
 });
 
 /**																						*
@@ -21,20 +28,19 @@ $j('#nav-below').waypoint('sticky', {
   * 								ISOTOPE FRONT PAGE	  								*
   *	----------------------------------------------------------------------------------- *
   *						http://isotope.metafizzy.co I bow to you. 						*
+  *						 And that Mary Lou: http://bit.ly/IveJtX						*
   *-------------------------------------------------------------------------------------*/
 
 // first let's wrap our function to run only on the home page
 if($j('body.home').length > 0){
 		
-	//let's get rid of the links in the secondary menu
-	//note: deliberately using this class selector to isolate only classes that 
-	//      are added from the portfolio_category
+	//let's get rid of the links in the secondary menu only for portfolio_category
 	$j('.menu-item-object-portfolio_category a').attr('href', '#');
 	
 	//then let's take the class we entered in the custom menu and turn it into a data-filter
 	var strExtract = "data-filter-";
-	$j('#menu-portfolio-menu li.menu-item').each(function(i){ //not including the li that's not a menu.item
-		//taking the first class... could be dangerous? 
+	$j('#menu-portfolio-menu li.menu-item').each(function(i){ //not including the li that're not menu.item
+		//taking the first class... is it always the first class?? could be dangerous? 
 		thingOne = $j('#menu-portfolio-menu li.menu-item:eq('+i+')').attr("class").split(' ')[0];
 		//console.log(i+'= '+thingOne);
 		newThingOne = thingOne.replace(strExtract, '');
@@ -106,9 +112,17 @@ if($j('body.home').length > 0){
   
 	//initialize isotope
 	$j('#isotope').isotope({
+		//first let's get sort data
+		getSortData 	: {
+			year : function ( $elem ) {
+				return parseInt( $elem.find('.portfolio-year').text(), 10 );
+			}
+		},
 		// options
 		//itemSelector : '.naztomizr_portfolio',
-		layoutMode   : 'masonry'
+		layoutMode  	: 'masonry',
+		sortBy			: 'year',
+		sortAscending	: false
 	})
 	
 	//filter items when filter link is clicked
@@ -120,7 +134,17 @@ if($j('body.home').length > 0){
 		return false;
 	});
 	
-} // end isotope if statement
+	
+	//Now let's add a little hover direction
+	
+	$j(function() {
+			
+				$j(' #isotope > article ').each( function() { $j(this).find('a').hoverdir(); } );
+
+			});
+} // end isotope front page if statement
+
+
 
 
 	

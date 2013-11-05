@@ -25,7 +25,7 @@ a:hover,
 a:focus {
   	background-color: yellow;
   	color: #da3f96;
-  	text-decoration: underline;
+  	text-decoration: none;
 }
 
 /* HEADER */
@@ -93,12 +93,30 @@ nav.portfolio-secondary {
 
 /* hide the circular zoom, keep link */
 .home .round-div {
-	border-color: transparent;
+	overflow: hidden;
+	border: 0px;
+	width: 269px;
+	height: 250px;
+	top: 0;
+	left: 0;
+	-webkit-border-radius: none;
+	-moz-border-radius: none;
+	border-radius: 0px;
 }
 .home .round-div:focus,
 .home .round-div:hover {
 	background-color: rgba(255,255,0,0.9);
+	-webkit-transform: none;
+	-moz-transform: none;
+	-ms-transform: none;
+	-o-transform: none;
+	transform: none;
 }
+
+.home .round-div div {
+	margin-top: 25%;
+}
+
 #isotope{
 	margin: 0 auto 20px;
 }
@@ -156,20 +174,35 @@ nav.portfolio-secondary {
 /*INDIVIDUAL POST PAGES*/
 
 /* seconday nav */
-#nav-below {
+.nav-below-sticky-wrapper {
 	border-bottom: #DDD solid 2px;
-	width: auto;
+	margin-bottom: 1%;
 }
+
 #nav-below .assistive-text {
 	display: none;
 }
 
+/*need to get rid of .pager padding for nested spans*/
+#nav-below .pager {
+	padding: 0;	
+}
+
+#nav-below ul > li {
+	-webkit-transition: none;
+	-moz-transition: none;
+	-o-transition: none;
+	transition: none;
+}
+#nav-below.stuck ul > li {
+	width: auto;
+}
 #nav-below.stuck {
 	position: fixed;
 	top: 105px;
 	background-color: rgba(233,234,238,0.9);
 	z-index: 30;
-	width: 40%;
+	width: 52%;
 }
 .pager li > a, .pager li > span {
 	background-color: transparent !important;

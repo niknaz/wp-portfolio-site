@@ -39,14 +39,6 @@ a:focus {
 	-webkit-opacity: .9%;
 	filter:alpha(opacity=90);
 }
-/* make me sticky again! 
-#sticky-header{
-	background-image: url(images/purp2.gif);
-	position: fixed;
-	width: 100%;
-	height: 89px;
-	z-index: 3;
-} */
 
 /* MAIN WRAPPER */
 #main-wrapper {
@@ -90,7 +82,7 @@ h2.site-description{
 }
 
 
-/* SECONDARY-MENU (isotope-menu */
+/* SECONDARY-MENU (isotope-menu) */
 nav.portfolio-secondary {
 	float: none !important;
 	margin-left: auto !important;
@@ -154,11 +146,21 @@ nav.portfolio-secondary {
 }
 
 /*INDIVIDUAL POST PAGES*/
+#nav-below {
+	border-bottom: #DDD solid 1px;
+}
 #nav-below .assistive-text {
 	display: none;
 }
 
-.pager li > span {
+#nav-below.stuck {
+	position: fixed;
+	top: 105px;
+	background-color: rgba(233,234,238,0.9);
+	z-index: 30;
+}
+.pager li > a, .pager li > span {
+	background-color: transparent !important;
 	border: none;
 }
 .pager a{

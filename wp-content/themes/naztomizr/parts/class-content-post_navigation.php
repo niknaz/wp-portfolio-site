@@ -82,7 +82,7 @@ class TC_post_navigation {
 
         </nav><!-- #<?php echo $html_id; ?> .navigation -->
 
-      <hr class="featurette-divider">
+      <?php //<hr class="featurette-divider"> ?>
 
       <?php elseif ( $wp_query->max_num_pages > 1 && !is_404() && !tc__f( '__is_home_empty') ) : ?>
 

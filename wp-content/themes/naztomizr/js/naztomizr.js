@@ -12,7 +12,9 @@ $j(function(){
 ////////// begin sitewide functions /////////////////
 
 //sticky the menu currently not in use
-//$j('#sticky-header').waypoint('sticky');
+$j('#nav-below').waypoint('sticky', {
+	offset: 100
+});
 
 /**																						*
   *-------------------------------------------------------------------------------------*

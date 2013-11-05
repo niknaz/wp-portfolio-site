@@ -34,6 +34,14 @@
 	true
 	);
 	
+	wp_enqueue_script(
+	'waypoints-sticky', 
+	get_stylesheet_directory_uri() . '/js/waypoints-sticky.min.js', 
+	array('jquery'), 
+	'1.0', 
+	true
+	);
+	
 /* and enqueue the scripts */
 	wp_enqueue_script(
 	'naztomizr',

@@ -139,7 +139,7 @@ if($j('body.home').length > 0){
 	
 	$j(function() {
 			
-				$j(' #isotope > article ').each( function() { $j(this).find('a').hoverdir(); } );
+				$j('#isotope > article section div a').each( function() { $j(this).hoverdir(); } );
 
 			});
 } // end isotope front page if statement

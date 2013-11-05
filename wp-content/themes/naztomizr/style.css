@@ -105,7 +105,8 @@ nav.portfolio-secondary {
 }
 .home .round-div:focus,
 .home .round-div:hover {
-	background-color: rgba(255,255,0,0.9);
+	/*background-color: rgba(255,255,0,0.9);*/
+	background-color: transparent;
 	-webkit-transform: none;
 	-moz-transform: none;
 	-ms-transform: none;
@@ -113,8 +114,18 @@ nav.portfolio-secondary {
 	transform: none;
 }
 
+.portfolio-title {
+	padding-top: 25%;
+	font-style: oblique;
+	font-weight: bolder;
+}
 .home .round-div div {
-	margin-top: 25%;
+	/*margin-top: 25%;*/
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	left: 100%;
+	background-color: rgba(255,255,0,0.9);
 }
 
 #isotope{

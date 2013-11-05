@@ -91,6 +91,14 @@ nav.portfolio-secondary {
 
 /* ISOTOPE */
 
+/* hide the circular zoom, keep link */
+.home .round-div {
+	border-color: transparent;
+}
+.home .round-div:focus,
+.home .round-div:hover {
+	background-color: rgba(255,255,0,0.9);
+}
 #isotope{
 	margin: 0 auto 20px;
 }
@@ -146,8 +154,11 @@ nav.portfolio-secondary {
 }
 
 /*INDIVIDUAL POST PAGES*/
+
+/* seconday nav */
 #nav-below {
-	border-bottom: #DDD solid 1px;
+	border-bottom: #DDD solid 2px;
+	width: auto;
 }
 #nav-below .assistive-text {
 	display: none;
@@ -158,6 +169,7 @@ nav.portfolio-secondary {
 	top: 105px;
 	background-color: rgba(233,234,238,0.9);
 	z-index: 30;
+	width: 40%;
 }
 .pager li > a, .pager li > span {
 	background-color: transparent !important;
@@ -175,6 +187,13 @@ nav.portfolio-secondary {
 
 .featurette-divider {
 	margin: 0;
+}
+.carousel-caption{
+	padding: 2%;
+	position: absolute;
+	bottom: 5%;
+	margin-left: auto;
+	margin-right: auto;
 }
 
 /* PAGES */

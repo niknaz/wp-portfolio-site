@@ -145,8 +145,6 @@ if($j('body.home').length > 0){
 } // end isotope front page if statement
 
 
-
-
 	
 ////////// end sitewide functions //////////////////
 });

@@ -167,4 +167,19 @@ function move_my_slider() {
 	//we re-hook the slider. Check the priority here : set to 0 to be the first in the list of different actions hooked to this hook 
 	add_action( '__before_main_container' , array( TC_slider::$instance , 'tc_slider_display' ), 11);
 }
+
+/*
+ * Adding our embedded videos where the slider is
+ */
+ //we add the action with priority set to 0 => it will be displayed in first position (before the slider if any)
+add_action('__before_main_container' , 'add_video_embed', 12);
+ 
+function add_video_embed() {
+
+    if( get_field('video_embed') ){
+    	
+    	echo '<div class="video-embed">'.wp_oembed_get( get_field('video_embed')).'</div>';
+    }
+}
+ 
 ?>

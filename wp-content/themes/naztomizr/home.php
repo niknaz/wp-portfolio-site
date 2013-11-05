@@ -11,6 +11,7 @@
 <?php do_action( '__before_main_wrapper' ); ##hook of the header with get_header ?>
 <?php tc__f('rec' , __FILE__ , __FUNCTION__ ); ?>
 <div id="main-wrapper" class="portfolio-container">
+
 	<?php ##Adding a registered menu ?>
 	<section id="options" class="isotope-header row-fluid">
 	<?php wp_nav_menu( array(

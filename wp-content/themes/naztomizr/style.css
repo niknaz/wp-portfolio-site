@@ -103,9 +103,9 @@ nav.portfolio-secondary {
 	-moz-border-radius: none;
 	border-radius: 0px;
 }
+/*overriding*/
 .home .round-div:focus,
 .home .round-div:hover {
-	/*background-color: rgba(255,255,0,0.9);*/
 	background-color: transparent;
 	-webkit-transform: none;
 	-moz-transform: none;
@@ -115,17 +115,17 @@ nav.portfolio-secondary {
 }
 
 .portfolio-title {
-	padding-top: 25%;
+	padding: 25% 5% 0 5%;
 	font-style: oblique;
 	font-weight: bolder;
 }
+/*adding this div so we can use hoverdir.js*/
 .home .round-div div {
-	/*margin-top: 25%;*/
 	position: absolute;
 	width: 100%;
 	height: 100%;
 	left: 100%;
-	background-color: rgba(255,255,0,0.9);
+	background-color: rgba(255,255,0,0.7);
 }
 
 #isotope{
@@ -248,31 +248,55 @@ footer#footer p, footer#footer a {
 }
 /* yinstagram */
 .widget li::before {
-	content: none;
+	content: none; /*i think this is overrideing bootstrap*/
 }
-/* contact */
-#footer-contact-first-p > span {
-	padding-right: 104px;
-	margin-right: 9px;
+.widget ul.yinstagram_grid {
+	margin-top: 0;
 }
 
-#footer-contact-second-p > span input {
+/* contact */
+#wpcf7-f81-w1-o1 form > p > span input,
+#wpcf7-f81-w1-o1 form > p > span textarea {
 	margin-bottom: 4px;
+	padding: 4px 0;
 }
+
 .footer-name{
-	margin-right: 9px;
+	margin-right: 1%;
 }
-.textbox, .captcha-input {
-	width: 125px;
+#footer-contact-name {
+	width: 40%;
 }
-.emailbox {
-	width: 150px;
+#footer-contact-email {
+	width: 49%;
+}
+.footer-message textarea{
+	width: 90%;
+}
+#footer-contact-captcha-input {
+	width: 45%;
 }
 
 #footer-contact-captcha{
 	height: 28px;
-	margin: 0 5px 10px 0;
+	margin: 0 1% 5px 0;
 }
 #footer-submit{
-	margin: 0 0 10px 36px;
+	margin: 0 0 5px 3%;
+}
+
+/*mz-page-widget*/
+.mz-page-featured-image {
+	overflow: hidden;
+	height: 160px;
+}
+.mz-page-featured-image a img {
+	width: 100%;
+}
+
+/* SMALLER SCREENS */
+@media (min-width: 980px) and (max-width: 1199px) {
+	.yinstagram_grid li:nth-last-child(-n+2){
+		display: none;
+	}
 }

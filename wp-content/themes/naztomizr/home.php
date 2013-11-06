@@ -13,11 +13,11 @@
 <div id="main-wrapper" class="portfolio-container">
 
 	<?php ##Adding a registered menu ?>
-	<section id="options" class="isotope-header row-fluid">
+	<section id="options" class="isotope-header row">
 	<?php wp_nav_menu( array(
 		'theme_location' 	=> 'portfolio_secondary',
 		'container'			=> 'nav',
-		'container_class'	=> 'isotope-menu portfolio-secondary span8',
+		'container_class'	=> 'isotope-menu portfolio-secondary span9',
 		'menu_class'		=> 'nav nav-tabs',
 		'items_wrap'		=> '<ul id="%1$s" class="%2$s">%3$s</ul>'
 	 )); ?>

@@ -25,6 +25,17 @@ $j('#nav-below').waypoint('sticky', {
 
 /**																						*
   *-------------------------------------------------------------------------------------*
+  * 					SPECIAL ADD CLASS FOR IN-SITE CONTACT FORM 7 					*
+  *	----------------------------------------------------------------------------------- *
+  *																						*
+  *-------------------------------------------------------------------------------------*/
+//first let's isolate the contact page
+if( $j('#main-wrapper').find('div.wpcf7').length > 0 ){
+	$j('#main-wrapper').find('div.wpcf7').addClass('span9 offset2');
+}
+
+/**																						*
+  *-------------------------------------------------------------------------------------*
   * 								ISOTOPE FRONT PAGE	  								*
   *	----------------------------------------------------------------------------------- *
   *						http://isotope.metafizzy.co I bow to you. 						*
@@ -115,7 +126,7 @@ if($j('body.home').length > 0){
 		//first let's get sort data
 		getSortData 	: {
 			year : function ( $elem ) {
-				return parseInt( $elem.find('.portfolio-year').text(), 10 );
+				return parseInt( $elem.find('.portfolio-year').text(), 5 );
 			}
 		},
 		// options

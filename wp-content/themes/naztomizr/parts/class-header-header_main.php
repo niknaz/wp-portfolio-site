@@ -181,7 +181,7 @@ class TC_header_main {
 
 	      	<div class="navbar-wrapper clearfix span9">
 
-          		<div class="navbar notresp row-fluid pull-left">
+          		<div class="navbar notresp hidden-phone row-fluid pull-left">
           			<div class="navbar-inner" role="navigation">
           				<?php tc__f( 'tip' , __FUNCTION__ , __CLASS__, __FILE__ ); ?>
           				<div class="row-fluid">
@@ -190,7 +190,7 @@ class TC_header_main {
 	            	</div><!-- /.navbar-inner -->
 	            </div><!-- /.navbar notresp -->
 
-	            <div class="navbar resp">
+	            <div class="navbar visible-phone resp">
 	            	<div class="navbar-inner" role="navigation">
 	            		<?php do_action( '__navbar' , 'resp' ); //hook of social, menu, ordered by priorities 10, 20?>
 	            	</div><!-- /.navbar-inner -->
@@ -255,7 +255,7 @@ class TC_header_main {
 		ob_start();
 		?>
 			<?php if ( '__header' == current_filter() ) : //when hooked on  __header?>
-				<div class="container outside">
+				<div class="container visible-phone outside">
 			        <h2 class="site-description">
 			        	 <?php tc__f( 'tip' , __FUNCTION__ , __CLASS__, __FILE__ ); ?>
 			        	 <?php bloginfo( 'description' ); ?>

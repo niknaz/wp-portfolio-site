@@ -42,7 +42,7 @@ a:focus {
 
 /* MAIN WRAPPER */
 #main-wrapper {
-	margin-top: 120px;
+	margin: 142px auto 0;
 }
 
 /* BRAND */
@@ -84,9 +84,17 @@ h2.site-description{
 
 /* SECONDARY-MENU (isotope-menu) */
 nav.portfolio-secondary {
-	float: none !important;
+	/*float: none !important;
 	margin-left: auto !important;
-	margin-right: auto !important;
+	margin-right: auto !important;*/
+	background-color: rgba(233,234,238,0.9);
+	position: fixed;
+	top: 105px;
+	z-index: 30;
+	width: 100%;
+}
+#menu-portfolio-menu {
+	margin: 0 10%;
 }
 
 /* ISOTOPE */
@@ -129,7 +137,7 @@ nav.portfolio-secondary {
 }
 
 #isotope{
-	margin: 0 auto 20px;
+	margin: 0 auto;
 }
 
 /**** Isotope Filtering ****/
@@ -242,6 +250,11 @@ nav.portfolio-secondary {
 
 /* PAGES */
 
+/* contact */
+.page-id-7 #main-wrapper header {
+	display: none;
+}
+
 /* FOOTER */
 footer#footer p, footer#footer a {
 	text-align: left;
@@ -295,8 +308,73 @@ footer#footer p, footer#footer a {
 }
 
 /* SMALLER SCREENS */
-@media (min-width: 980px) and (max-width: 1199px) {
+@media (max-width: 1199px) {
 	.yinstagram_grid li:nth-last-child(-n+2){
 		display: none;
+	}
+}
+
+@media (min-width: 768px) and (max-width: 979px) {
+	/*we're so compact, we don't need to engage mobile interface yet*/
+	.tc-header .brand {
+		width: 22.93%;
+		float: left;
+		margin-left: 2.76%
+	}
+	.navbar-wrapper.clearfix.span9 {
+		width: 74.30%;
+	}
+	.navbar.notresp {
+		display: block;
+		min-width: 690px	9;
+	}
+	.navbar {
+		float: right;
+		overflow: visible;
+	}
+	.pull-left{
+		float: left;
+	}
+	.navbar .navbar-inner {
+		float: right;
+		display: block;
+	}
+	.navbar .nav {
+		position: relative;
+		float: left;
+		display: block;
+		margin: 0 10px 0 0;
+	}
+	.navbar .nav > li {
+		float: left;
+	}
+	
+	.nav-collapse, .nav-collapse.collapse {
+		overflow: visible;
+	}
+}
+
+@media (max-width: 767px) {
+	.tc-header {
+		height: 50px;
+	}
+	.brand {
+	padding-top: 13px !important;
+	}
+	.brand h1 {
+		margin-right: 35%;
+	}
+	.navbar-wrapper.clearfix.span9{
+		margin-top: -70px;
+		margin-left: 35%;
+		width: 40%;
+	}
+	nav.portfolio-secondary {
+		top: 65px;
+		left: 0;
+	}
+	#menu-portfolio-menu {
+		font-size: 95%;
+		margin: 0 5%;
 	}
 }

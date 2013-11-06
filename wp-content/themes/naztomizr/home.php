@@ -17,7 +17,7 @@
 	<?php wp_nav_menu( array(
 		'theme_location' 	=> 'portfolio_secondary',
 		'container'			=> 'nav',
-		'container_class'	=> 'isotope-menu portfolio-secondary span9',
+		'container_class'	=> 'isotope-menu portfolio-secondary span12',
 		'menu_class'		=> 'nav nav-tabs',
 		'items_wrap'		=> '<ul id="%1$s" class="%2$s">%3$s</ul>'
 	 )); ?>
